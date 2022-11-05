@@ -1,8 +1,13 @@
 import React from 'react'
+import Post from './Post'
 
 const Main = () => {
   return (
-    <div>Main</div>
+    <div className='main'>
+      <Post />
+      <Post />
+      <Post />
+    </div>
   )
 }
 
