@@ -7,6 +7,8 @@ const Main = () => {
       <Post />
       <Post />
       <Post />
+      <Post />
+      <Post />
     </div>
   )
 }

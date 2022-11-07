@@ -1,6 +1,24 @@
 import React from 'react'
+import { useState } from 'react'
+import CommentModal from './CommentModal'
+import StatusModal from './StatusModal'
 
 const Post = () => {
+
+  const [showModal, setShowModal] = useState(false)
+  const [showComment, setShowComment] = useState(false)
+
+  const toggleModal = () => {
+    showModal
+    ? setShowModal(false)
+    : setShowModal(true)
+  }
+  const toggleComment = () => {
+    showComment
+    ? setShowComment(false)
+    : setShowComment(true)
+  }
+
   return (
     <div className='post'>
       <div className="left">
@@ -16,11 +34,13 @@ const Post = () => {
       <div className="line"></div>
 
       <div className="right">
-        <div className='form-group'>
+        <div className='button-group'>
           <label htmlFor="status">Status: </label>
-          <button className='status-control'>Backlog <i className="fa-solid fa-chevron-down"></i></button>
+          <button className='status-control' onClick={toggleModal}>Backlog <i className="fa-solid fa-chevron-down"></i></button>
+          {showModal && <StatusModal />}
         </div>
-        <button className='btn'>Add comment</button>
+        <button className='btn' onClick={toggleComment}>Add comment</button>
+        {showComment && <CommentModal />}
       </div>
     </div>
   )
