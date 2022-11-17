@@ -3,7 +3,7 @@ import { useState } from 'react'
 import CommentModal from './CommentModal'
 import StatusModal from './StatusModal'
 
-const Post = () => {
+const Post = ({ issue }) => {
 
   const [showModal, setShowModal] = useState(false)
   const [showComment, setShowComment] = useState(false)
@@ -23,13 +23,16 @@ const Post = () => {
     <div className='post'>
       <div className="left">
         <div className="up">
-          <h1>Title</h1>
+          <h1>{issue.subject}</h1>
           <p>9.30</p>
           <p>|</p>
           <p>Sara Öhman</p>
         </div>
-        <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Magnam, eum aperiam suscipit tenetur deleniti accusamus quos odit impedit ipsum.</p>
+        <p>{issue.message}</p>
       </div>
+
+
+
 
       <div className="line"></div>
 
