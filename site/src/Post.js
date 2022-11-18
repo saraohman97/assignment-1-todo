@@ -24,9 +24,9 @@ const Post = ({ issue }) => {
       <div className="left">
         <div className="up">
           <h1>{issue.subject}</h1>
-          <p>9.30</p>
+          <p>{issue.created}</p>
           <p>|</p>
-          <p>Sara Öhman</p>
+          <p>{issue.mail}</p>
         </div>
         <p>{issue.message}</p>
       </div>

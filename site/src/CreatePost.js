@@ -9,7 +9,8 @@ const CreatePost = () => {
 
   const [formData, setFormData] = useState({
     subject: '',
-    message: ''
+    message: '',
+    mail: ''
   })
 
   const onChange = e => {
@@ -32,13 +33,11 @@ const CreatePost = () => {
     <form className='create-post' onSubmit={handleSubmit}>
       <h1>Create</h1>
 
-      <div className='d-flex'>
-        <div className="form-group">
-          <label htmlFor="user">User:</label>
-          <input type="text" className='form-control' />
-        </div>
 
-      </div> 
+      <div className="form-group">
+        <label htmlFor="mail">Mail:</label>
+        <input onChange={onChange} type="text" value={formData.mail} name='mail' className='form-control' />
+      </div>
 
       <div className="form-group">
         <label htmlFor="subject">Title:</label>
